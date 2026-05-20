@@ -1,0 +1,9 @@
+.Todoform{
+    border: thin solid gray;
+    width: 50%;
+    /* height: auto; */
+    padding:10px 10px;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 30px;
+}

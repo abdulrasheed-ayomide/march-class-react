@@ -1,0 +1,23 @@
+.container {
+  width: 50%;
+  margin: auto;
+  border: thin solid black;
+}
+
+.container p{
+  color: chartreuse;
+}
+
+h1 {
+  font-size: 60px;
+}
+
+.app.Light {
+  background-color: white;
+  color: black;
+}
+
+.app.Dark {
+  background-color: black;
+  color: white;
+}
