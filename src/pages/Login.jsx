@@ -64,6 +64,7 @@ export const Login = () => {
                     error.response.data.email
                 );
             }
+            console.log(error);
 
         } finally {
             setLoading(false);

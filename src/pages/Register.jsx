@@ -30,25 +30,45 @@ export const Register = () => {
     const onSubmit = async (data) => {
         console.log('registering user...');
         setLoading(true);
+        setDisabled(true);
 
         try {
-            const response = await publicInstance.post("/api/routes/register", data)
-            console.log(response);
-            if (response && response.data && response.data.token) {
-                localStorage.setItem("token", response.data.token)
-                localStorage.setItem("verifyEmail", data.email);
+
+            const response = await publicInstance.post(
+                "/api/routes/register",
+                data
+            );
+
+            console.log(response.data);
+
+            if (response && response.data) {
+
+                localStorage.setItem(
+                    "verifyEmail",
+                    data.email
+                );
+
                 navigate("/verify-email", {
                     state: {
                         email: data.email
                     }
                 });
             }
+
         } catch (error) {
+
             console.log(error.response);
-            const message = error?.response?.data?.message || "Registration failed. Please try again.";
+
+            const message =
+                error?.response?.data?.message ||
+                "Registration failed. Please try again.";
+
             seterrorMessage(message);
-        } finally {
+
+        }
+        finally {
             setLoading(false);
+            setDisabled(false);
         }
     }
 
@@ -86,7 +106,7 @@ export const Register = () => {
                 <h2 style={{ textAlign: "center" }}>Register</h2>
                 {/* name input (string) */}
                 <div>
-                    <label htmlFor="name">Name:</label>
+                    <label htmlFor="text">Name:</label>
                     <input
                         type="name"
                         id="name"
