@@ -10,7 +10,7 @@
             const getProduct = async () => {
                 setLoading(true)
                 try {
-                    const pro = await fetch('http://localhost:4000/api/product');
+                    const pro = await fetch('https://march-class-node-xfpl.onrender.com/api/routes/products');
                     console.log(pro);
                     
                     const res = await pro.json()

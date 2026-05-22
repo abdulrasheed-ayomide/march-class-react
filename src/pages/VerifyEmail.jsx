@@ -13,6 +13,7 @@ const VerifyEmail = () => {
     const email = location.state?.email || localStorage.getItem("verifyEmail");
 
     const handleVerify = async () => {
+        alert("Verifying email...");
 
         try {
 
@@ -40,6 +41,7 @@ const VerifyEmail = () => {
     };
 
     const handleResendOtp = async () => {
+        alert("Resending OTP...");
 
         try {
 

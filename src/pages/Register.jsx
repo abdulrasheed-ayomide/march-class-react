@@ -57,7 +57,9 @@ export const Register = () => {
 
         } catch (error) {
 
-            console.log(error.response);
+            console.log(response.data);
+            console.log(response.status);
+            console.log(response.headers);
 
             const message =
                 error?.response?.data?.message ||
